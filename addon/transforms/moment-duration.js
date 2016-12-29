@@ -5,10 +5,10 @@ export default DS.Transform.extend({
   deserialize: function(serialized) {
     if (serialized) {
       let result = moment.duration(serialized);
-      if (moment.isDuration(result) && result.isValid()) {
+      if (moment.isDuration(result)) {
         return result;
       }
-      
+
       return null;
     } else {
       return serialized;
